@@ -36,6 +36,10 @@ const cadastrarMeta = async () => {
 }
 
 const listarMetas = async () => {
+    if(metas.lenght == 0){
+        messagem = "Não existem metas!"
+        return
+    }
     const respostas = await checkbox(
         { message: "Use as Setas para mudar de meta, o Espaço para marcar/desmarcar e Enter para finalizar essa etapa",
             choices: [...metas],
